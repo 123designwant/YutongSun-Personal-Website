@@ -15,32 +15,146 @@ import { motion, AnimatePresence } from "framer-motion";
 // --- 答案之书 原始数据 ---
 const ANSWERS_DATA = [
   "", // placeholder
-  "You life will find it's way", "自由的去体会", "所有外界发生的事情都是来陪你体验你自己的", "好像其实都没有人懂 有的",
-  "变成一个 更圆满的人", "再做做看 再试试看", "嬉皮笑脸的活在 这个世界上", "在万物之中 辨识自己", "但这都不重要啊",
-  "you are not alone", "没什么好期待的了", "为自己去做实验去印证", "你是对的", "你永远都可以坚持自己",
-  "轻轻挥走就好了", "你只要完成自己就好", "其实我们生下来就被赋予一份祝福 就是我们做得到", "只专心的去照顾 自己的选择",
-  "不去想ta的意义", "光是能遇见就已经好了不起了", "无常才留下了人生有意义的事情", "知道太多就会开始烦恼", "不妥协的幸运 很难遇到",
-  "日子该是不同形状", "领悟或看开些什么真得需要时间", "那样不错", "把精雕细琢的成品抛空", "别怕", "不要让眼泪成为生活的客串",
-  "别回头去想", "这不是不好的事", "你很好 现在别开始遗憾", "其实谁不这样", "相信自己值得", "Gonna Stop", "You will try it out someday",
-  "慢慢地来", "就让它走", "似乎问题答案都相反", "把吊着的自己 放下来", "做回原本模样", "仍旧叛逆", "亲爱的你  想念自己吗",
-  "觉悟，留恋和坚强", "不去寻找，只因爱所以相遇", "Waiting for a joy ride", "天空和路一样远", "不要担心", "你不喜欢的 也如今它们四散无寻",
-  "你的人生其实不是因为获得他人的祝福所以才在等你", "希望大家所有的期待都会找到圆满的方式", "这些都是屁话", "希望你能像我一样 喜欢你们自己",
-  "不去想自由反而更轻松", "明天我们好好的过", "成功没那么严重做自己反而比较心安理得", "You are to be shining so bright shining bright",
-  "尽情不求自由", "然后转头", "任好坏开花结果", "想透了能有多轻松", "请永远开心的去找你自己是谁 不要去当一个什么样的人",
-  "这个世界其实比你想象的大", "人生很多发生的事情都是值得觉得幸福的", "不要放弃思索的过程", "去体验", "你就已经很棒了",
-  "自由就是一瞬间", "不会有答案", "希望你能永远都张牙舞爪", "别忘了要快乐", "都不必心慌", "在苦心之后看潮汐的永恒", "容忍它发生",
-  "总有的", "今天就是今天", "深遂的未知会浅一点", "Don't be afraid to let things happen", "时光是坟场", "没有尽头是一切的终点",
-  "故事慢慢讲", "欲望的生活里 考卷都交的太早", "你拥抱的 并不总是也拥抱你 而我想说的 谁也不可惜", "去挥霍和珍惜 是同一件事情",
-  "何必", "请随时准备好 拥抱", "你渴望的一切都将来到", "心是一地草野 唯一的家乡", "快乐悲伤都放肆", "拿剪刀奔向三千个烦恼",
-  "下一秒会更轻松", "一切值得快乐", "放着欲望不管", "有时候问题和答案无关", "有时候爱只和自己有关", "成长的滋味说起来并不算坏",
-  "这世界如此美好", "这世界即将美好", "在活与不活之间找还行的路", "顺其自然以后再也不会遗憾", "袖手旁观", "去表达感觉上的需要",
-  "思考什么不必得到", "眼前全在这里", "超脱和追求时常是混在一起", "没有多大意思", "You ought to face it", "有它自个儿的样子",
-  "你多难得", "始终无法决定方向", "你将看见飞鱼与鸟的艳阳天", "这个世界其实是异常立体, 可是声音是极为复杂的", "至少我们还在感受",
-  "这些都没有关系", "快逃啊！别试了快逃啊！", "偶尔叹口气", "自己才是唯一可以有耐心带着自己活到下一秒的那个人", "我们都尽力了",
-  "你们都辛苦了", "不必流浪", "活着疯癫的", "你说胜利就是胜利", "go and waste it", "不如成全它本可能造的悲剧",
-  "吃呀，吃不完就剩 剩的拣去噎死人生", "别祈祷我们先闹", "也许在梦的出口", "你会快乐", "是梦也快乐", "此刻灿烂", "原谅所有遗憾",
-  "能如何便如何", "像所有人一样谦卑", "后来不是未来 而是从此现在", "你是一个世界", "别停下来", "看见你想看见的",
-  "真诚的去面对人生的每一个选择", "不用更好，可是要值得", "It's always good that something happen in your life"
+  "You life will find it's way",
+  "自由的去体会",
+  "所有外界发生的事情都是来陪你体验你自己的",
+  "好像其实都没有人懂 有的",
+  "变成一个 更圆满的人",
+  "再做做看 再试试看",
+  "嬉皮笑脸的活在 这个世界上",
+  "在万物之中 辨识自己",
+  "但这都不重要啊",
+  "you are not alone",
+  "没什么好期待的了",
+  "为自己去做实验去印证",
+  "你是对的",
+  "你永远都可以坚持自己",
+  "轻轻挥走就好了",
+  "你只要完成自己就好",
+  "其实我们生下来就被赋予一份祝福 就是我们做得到",
+  "只专心的去照顾 自己的选择",
+  "不去想ta的意义",
+  "光是能遇见就已经好了不起了",
+  "无常才留下了人生有意义的事情",
+  "知道太多就会开始烦恼",
+  "不妥协的幸运 很难遇到",
+  "日子该是不同形状",
+  "领悟或看开些什么真得需要时间",
+  "那样不错",
+  "把精雕细琢的成品抛空",
+  "别怕",
+  "不要让眼泪成为生活的客串",
+  "别回头去想",
+  "这不是不好的事",
+  "你很好 现在别开始遗憾",
+  "其实谁不这样",
+  "相信自己值得",
+  "Gonna Stop",
+  "You will try it out someday",
+  "慢慢地来",
+  "就让它走",
+  "似乎问题答案都相反",
+  "把吊着的自己 放下来",
+  "做回原本模样",
+  "仍旧叛逆",
+  "亲爱的你  想念自己吗",
+  "觉悟，留恋和坚强",
+  "不去寻找，只因爱所以相遇",
+  "Waiting for a joy ride",
+  "天空和路一样远",
+  "不要担心",
+  "你不喜欢的 也如今它们四散无寻",
+  "你的人生其实不是因为获得他人的祝福所以才在等你",
+  "希望大家所有的期待都会找到圆满的方式",
+  "这些都是屁话",
+  "希望你能像我一样 喜欢你们自己",
+  "不去想自由反而更轻松",
+  "明天我们好好的过",
+  "成功没那么严重做自己反而比较心安理得",
+  "You are to be shining so bright shining bright",
+  "尽情不求自由",
+  "然后转头",
+  "任好坏开花结果",
+  "想透了能有多轻松",
+  "请永远开心的去找你自己是谁 不要去当一个什么样的人",
+  "这个世界其实比你想象的大",
+  "人生很多发生的事情都是值得觉得幸福的",
+  "不要放弃思索的过程",
+  "去体验",
+  "你就已经很棒了",
+  "自由就是一瞬间",
+  "不会有答案",
+  "希望你能永远都张牙舞爪",
+  "别忘了要快乐",
+  "都不必心慌",
+  "在苦心之后看潮汐的永恒",
+  "容忍它发生",
+  "总有的",
+  "今天就是今天",
+  "深遂的未知会浅一点",
+  "Don't be afraid to let things happen",
+  "时光是坟场",
+  "没有尽头是一切的终点",
+  "故事慢慢讲",
+  "欲望的生活里 考卷都交的太早",
+  "你拥抱的 并不总是也拥抱你 而我想说的 谁也不可惜",
+  "去挥霍和珍惜 是同一件事情",
+  "何必",
+  "请随时准备好 拥抱",
+  "你渴望的一切都将来到",
+  "心是一地草野 唯一的家乡",
+  "快乐悲伤都放肆",
+  "拿剪刀奔向三千个烦恼",
+  "下一秒会更轻松",
+  "一切值得快乐",
+  "放着欲望不管",
+  "有时候问题和答案无关",
+  "有时候爱只和自己有关",
+  "成长的滋味说起来并不算坏",
+  "这世界如此美好",
+  "这世界即将美好",
+  "在活与不活之间找还行的路",
+  "顺其自然以后再也不会遗憾",
+  "袖手旁观",
+  "去表达感觉上的需要",
+  "思考什么不必得到",
+  "眼前全在这里",
+  "超脱和追求时常是混在一起",
+  "没有多大意思",
+  "You ought to face it",
+  "有它自个儿的样子",
+  "你多难得",
+  "始终无法决定方向",
+  "你将看见飞鱼与鸟的艳阳天",
+  "这个世界其实是异常立体, 可是声音是极为复杂的",
+  "至少我们还在感受",
+  "这些都没有关系",
+  "快逃啊！别试了快逃啊！",
+  "偶尔叹口气",
+  "自己才是唯一可以有耐心带着自己活到下一秒的那个人",
+  "我们都尽力了",
+  "你们都辛苦了",
+  "不必流浪",
+  "活着疯癫的",
+  "你说胜利就是胜利",
+  "go and waste it",
+  "不如成全它本可能造的悲剧",
+  "吃呀，吃不完就剩 剩的拣去噎死人生",
+  "别祈祷我们先闹",
+  "也许在梦的出口",
+  "你会快乐",
+  "是梦也快乐",
+  "此刻灿烂",
+  "原谅所有遗憾",
+  "能如何便如何",
+  "像所有人一样谦卑",
+  "后来不是未来 而是从此现在",
+  "你是一个世界",
+  "别停下来",
+  "看见你想看见的",
+  "真诚的去面对人生的每一个选择",
+  "不用更好，可是要值得",
+  "It's always good that something happen in your life",
 ];
 // 补齐到 140 页
 while (ANSWERS_DATA.length <= 140) {
@@ -52,13 +166,15 @@ function AnswerBookSandbox() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [question, setQuestion] = useState("");
   const [pageNum, setPageNum] = useState("");
-  const [result, setResult] = useState<{ text: string; page: number } | null>(null);
+  const [result, setResult] = useState<{ text: string; page: number } | null>(
+    null
+  );
   const [error, setError] = useState("");
 
   const handleReveal = () => {
     setError("");
     let targetPage = parseInt(pageNum, 10);
-    
+
     if (!pageNum || isNaN(targetPage)) {
       targetPage = Math.floor(Math.random() * 140) + 1;
       setPageNum(targetPage.toString());
@@ -79,7 +195,7 @@ function AnswerBookSandbox() {
         <Sparkles className="h-5 w-5 text-blue-600" />
         沉浸体验答案之书
       </h4>
-      
+
       <AnimatePresence mode="wait">
         {!isExpanded ? (
           <motion.button
@@ -101,7 +217,9 @@ function AnswerBookSandbox() {
             className="space-y-5 overflow-hidden"
           >
             <div>
-              <label className="mb-2 block text-xs font-bold text-slate-500">写下你心中的一个疑惑 (或直接翻页)</label>
+              <label className="mb-2 block text-xs font-bold text-slate-500">
+                写下你心中的一个疑惑 (或直接翻页)
+              </label>
               <input
                 type="text"
                 value={question}
@@ -110,10 +228,12 @@ function AnswerBookSandbox() {
                 placeholder="例如：今天要去健身房吗？"
               />
             </div>
-            
+
             <div className="flex flex-col gap-4 md:flex-row md:items-end">
               <div className="flex-1">
-                <label className="mb-2 block text-xs font-bold text-slate-500">指定映射页码 (1-140)</label>
+                <label className="mb-2 block text-xs font-bold text-slate-500">
+                  指定映射页码 (1-140)
+                </label>
                 <input
                   type="number"
                   value={pageNum}
@@ -131,7 +251,7 @@ function AnswerBookSandbox() {
                 <BookOpen className="h-4 w-4" /> 翻开这一页
               </button>
             </div>
-            
+
             {error && <p className="text-sm text-red-500">{error}</p>}
 
             <AnimatePresence mode="wait">
@@ -172,8 +292,8 @@ const CONTENT_PRACTICES = [
     title: "《时寐日报》内容产品",
     subtitle: "将热烈和爱转化为可触摸的情绪载体",
     type: "线下产品 / 内容策划",
-    cover: "/时寐照片.png", 
-    link: "https://6a463974aa14151017dd13af--radiant-pudding-7ad1d2.netlify.app/", 
+    cover: "/时寐照片.png",
+    link: "https://6a463974aa14151017dd13af--radiant-pudding-7ad1d2.netlify.app/",
     linkLabel: "在线翻阅《时寐日报》",
     theme: "bg-[#f5ebd9]",
     tags: ["用户洞察", "纸媒设计", "内容策划", "线下落地"],
@@ -209,7 +329,7 @@ const CONTENT_PRACTICES = [
     linkLabel: "在线体验《答案之书》",
     theme: "bg-[#eaf4ff]",
     tags: ["AIGC", "网页开发", "内容运营", "轻交互"],
-    isInteractive: true, 
+    isInteractive: true,
     summary:
       "利用 AI 工具辅助全链路开发，上线半月独立访客 2000+，全项目累计触达用户 4000+。",
     sections: [
@@ -287,8 +407,7 @@ const DATA_RESEARCH = [
         text: "更进一步在预算和干预人数约束下，为不同分群匹配最优干预策略，设计最优策略预计平均挽留成功率达 61.7%。",
       },
     ],
-    pitch:
-      "数据分析的终点永远不是模型本身，而是策略的落地。",
+    pitch: "数据分析的终点永远不是模型本身，而是策略的落地。",
   },
   {
     id: "rl-portfolio",
@@ -363,7 +482,8 @@ const ABILITIES_DATA = [
     subtitle: "将大模型深度融入工作与研发流",
     theme: "bg-[#f8fbff]",
     tags: ["GPT", "Claude", "Gemini", "AI Workflow"],
-    summary: "熟悉AI模型能力边界，具备任务拆解与分阶段 Prompt 设计能力。能熟练应用 AI 于拆解任务、内容生成、代码辅助等，显著提高个人能效边界。"
+    summary:
+      "熟悉AI模型能力边界，具备任务拆解与分阶段 Prompt 设计能力。能熟练应用 AI 于拆解任务、内容生成、代码辅助等，显著提高个人能效边界。",
   },
   {
     id: "ab-data",
@@ -372,7 +492,8 @@ const ABILITIES_DATA = [
     subtitle: "统计学底蕴 + 全链路开发能力",
     theme: "bg-[#fff9f0]",
     tags: ["Python", "SQL", "SPSS", "PyTorch"],
-    summary: "熟练运用 Python/SQL/SPSS 进行数据清洗、提取和分析。掌握 PyTorch 框架及 MATLAB、R语言。"
+    summary:
+      "熟练运用 Python/SQL/SPSS 进行数据清洗、提取和分析。掌握 PyTorch 框架及 MATLAB、R语言。",
   },
   {
     id: "ab-content",
@@ -381,7 +502,8 @@ const ABILITIES_DATA = [
     subtitle: "理性分析驱动的感性表达",
     theme: "bg-[#f0f9ff]",
     tags: ["需求拆解", "指标转换", "用户画像"],
-    summary: "能够快速理解新业务场景，善于将数据结论与模型结果翻译为具体的运营建议，让数据服务于真实的商业价值转化。"
+    summary:
+      "能够快速理解新业务场景，善于将数据结论与模型结果翻译为具体的运营建议，让数据服务于真实的商业价值转化。",
   },
   {
     id: "ab-execute",
@@ -390,7 +512,8 @@ const ABILITIES_DATA = [
     subtitle: "从 0 到 1 的破局与闭环力",
     theme: "bg-[#fbf5ff]",
     tags: ["多线程并行", "项目管理", "跨界沟通"],
-    summary: "责任心强、抗压能力极强，拥有丰富的统筹与沟通经验，可保持高频稳定交付。"
+    summary:
+      "责任心强、抗压能力极强，拥有丰富的统筹与沟通经验，可保持高频稳定交付。",
   },
 ];
 
@@ -428,7 +551,13 @@ function DataCard({ item, onOpen }: any) {
       onClick={() => onOpen && onOpen(item)}
       whileHover={onOpen ? { y: -8 } : {}}
       transition={{ duration: 0.25 }}
-      className={`group overflow-hidden rounded-[2rem] ${item.theme} text-left shadow-[0_18px_45px_rgba(50,90,130,0.12)] transition ${onOpen ? 'hover:shadow-[0_24px_60px_rgba(37,99,235,0.18)] cursor-pointer' : 'cursor-default'}`}
+      className={`group overflow-hidden rounded-[2rem] ${
+        item.theme
+      } text-left shadow-[0_18px_45px_rgba(50,90,130,0.12)] transition ${
+        onOpen
+          ? "hover:shadow-[0_24px_60px_rgba(37,99,235,0.18)] cursor-pointer"
+          : "cursor-default"
+      }`}
     >
       {item.cover && (
         <div className="aspect-[16/9] overflow-hidden border-b border-black/5 bg-white">
@@ -468,7 +597,9 @@ function DataCard({ item, onOpen }: any) {
         </div>
         {onOpen && (
           <p className="mt-8 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-blue-600">
-            {item.isInteractive || item.link ? "View Details & Demo" : "Read Details"}
+            {item.isInteractive || item.link
+              ? "View Details & Demo"
+              : "Read Details"}
             <ChevronRight className="h-4 w-4" />
           </p>
         )}
@@ -502,7 +633,7 @@ function DataModal({ item, onClose }: any) {
             >
               <X className="h-5 w-5" />
             </button>
-            
+
             {/* 顶部展示封面图 */}
             {item.cover && (
               <div className="overflow-hidden rounded-[1.5rem] shadow-[0_16px_40px_rgba(15,23,42,0.16)]">
@@ -525,7 +656,7 @@ function DataModal({ item, onClose }: any) {
                 {item.subtitle}
               </p>
             </div>
-            
+
             <div className="mt-6 flex flex-wrap gap-2">
               {item.tags.map((tag: string) => (
                 <span
@@ -539,7 +670,7 @@ function DataModal({ item, onClose }: any) {
 
             {/* 如果项目包含 interactive 标识，展示互动沙盒 */}
             {item.isInteractive && <AnswerBookSandbox />}
-            
+
             {item.sections && (
               <div className="mt-10 space-y-8">
                 {item.sections.map((sec: any) => (
@@ -572,7 +703,7 @@ function DataModal({ item, onClose }: any) {
                 </a>
               </div>
             )}
-            
+
             {item.pitch && (
               <div className="mt-12 rounded-[1.5rem] border border-blue-200 bg-blue-50 p-7">
                 <h3 className="mb-3 flex items-center gap-2 text-lg font-black text-slate-950">
@@ -618,7 +749,7 @@ function Navbar({}: any) {
           <span className="grid h-8 w-8 place-items-center rounded-xl bg-blue-600 text-white">
             S
           </span>
-          SYT.AI
+          SYT.Wb
         </a>
         <div className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
@@ -652,7 +783,7 @@ function Navbar({}: any) {
           {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
       </div>
-      
+
       {/* 手机端下拉菜单 */}
       <AnimatePresence>
         {open && (
@@ -700,15 +831,19 @@ function Navbar({}: any) {
               >
                 <X className="h-4 w-4" />
               </button>
-              
+
               <div className="mx-auto mb-5 grid h-14 w-14 place-items-center rounded-full bg-blue-50 text-blue-600">
                 <Mail className="h-6 w-6" />
               </div>
-              
-              <h3 className="mb-2 text-2xl font-black text-slate-950">联系我</h3>
-              <p className="text-lg font-bold text-slate-700">微信号：18805571318</p>
+
+              <h3 className="mb-2 text-2xl font-black text-slate-950">
+                联系我
+              </h3>
+              <p className="text-lg font-bold text-slate-700">
+                微信号：18805571318
+              </p>
               <p className="mt-1 text-sm text-slate-500">（手机号同）</p>
-              
+
               <button
                 onClick={handleCopy}
                 className="mt-8 w-full rounded-xl bg-blue-600 py-3.5 text-sm font-bold text-white transition hover:bg-blue-700"
@@ -745,7 +880,7 @@ function Hero({}: any) {
         className="relative mx-auto w-full max-w-5xl text-center"
       >
         <p className="mb-4 text-xs font-black uppercase tracking-[0.55em] text-white drop-shadow">
-          AI Product · Data Analysis · Growth
+          AIGC · Data Analysis · Growth
         </p>
         <h1 className="mx-auto max-w-4xl font-serif text-6xl italic leading-[0.88] text-white drop-shadow-md md:text-8xl">
           {RESUME_DATA.name}
@@ -753,7 +888,8 @@ function Hero({}: any) {
           Little Universe
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base font-medium leading-8 text-white/95 drop-shadow md:text-lg">
-          处理算法与数据，也洞察情绪与人性。<br/>用 AIGC 加速效率，也用内容引发共鸣。
+          处理算法与数据，也洞察情绪与人性。
+          <br />用 AIGC 加速效率，也用内容引发共鸣。
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
           <a
@@ -795,7 +931,7 @@ function Footer({}: any) {
               Sun Yutong®
             </h2>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
-              Based in China / Available Worldwide
+              Based in China
             </p>
           </div>
           <div className="text-left md:text-right">
@@ -888,14 +1024,14 @@ export default function App() {
           />
           <div className="grid gap-7 md:grid-cols-2">
             {ABILITIES_DATA.map((ab) => (
-              <DataCard key={ab.id} item={ab} onOpen={null} /> 
+              <DataCard key={ab.id} item={ab} onOpen={null} />
             ))}
           </div>
         </div>
       </section>
 
       <Footer />
-      
+
       {/* 统一的模态框组件，用于渲染点击后的详情、画廊和沙盒 */}
       <DataModal item={selectedItem} onClose={() => setSelectedItem(null)} />
     </div>
