@@ -887,8 +887,8 @@ function Hero({}: any) {
           Little Universe
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-stone-600 font-sans md:text-lg">
-          处理算法与数据，也洞察情绪与人性。
-          <br />用 AIGC 加速效率，也用内容引发共鸣。
+          处理数据，在无序中寻找客观的规律。
+          <br />书写内容，于规律外照见鲜亮的心脏。
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a
@@ -908,12 +908,12 @@ function Quote({}: any) {
     <section className="bg-[#FEFCF6] px-5 py-28 md:py-36">
       <motion.div {...fadeInUp} className="mx-auto max-w-4xl text-center">
         <h2 className="font-serif text-4xl font-bold italic leading-tight text-stone-900 md:text-6xl">
-          “用数据支撑判断，
+          “以数据作为判断的底色，
           <br className="hidden md:block" />
-          用结论分析决策。”
+          以内容作为灵感的出口。”
         </h2>
         <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-stone-500 font-sans">
-          无论是分析表格里跌宕的转化率，还是报纸上铅字印刷的访谈，背后都指向同一个命题：如何更精准地理解业务，理解用户，并把想法实实在在地交付出来。
+          去分析，去思考，去感受，然后做到。
         </p>
       </motion.div>
     </section>
@@ -981,7 +981,7 @@ export default function App() {
         <div className="mx-auto max-w-5xl">
           <SectionHeading
             eyebrow="Section 01"
-            title="内容、产品与协调"
+            title="产品与协调"
             desc="把需求落地，把思考精雕细琢。"
           />
           <div className="grid gap-7 md:grid-cols-2">
@@ -997,7 +997,7 @@ export default function App() {
         <div className="mx-auto max-w-5xl">
           <SectionHeading
             eyebrow="Section 02"
-            title="项目与科研实践"
+            title="项目与科研"
             desc="用数据建模解释现象，将理论与算法结合落地。"
           />
           <div className="grid gap-7 md:grid-cols-2">
@@ -1013,7 +1013,7 @@ export default function App() {
         <div className="mx-auto max-w-5xl">
           <SectionHeading
             eyebrow="Section 03"
-            title="实习经历"
+            title="实习"
             desc="在真实的工作交付中，验证质量与效率。"
           />
           <div className="grid gap-7 md:grid-cols-2">
